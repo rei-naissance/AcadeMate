@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "785925919654",
+    "project_id": "academate-94e1e",
+    "storage_bucket": "academate-94e1e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785925919654:android:d1ebe8be3aaede5d69f567",
+        "android_client_info": {
+          "package_name": "com.example.academate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCismjg9_JrxhHaKZWb4xVuFA0tsJYzv_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
