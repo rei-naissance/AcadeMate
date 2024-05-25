@@ -46,12 +46,7 @@ public class Forms extends AppCompatActivity {
         });
 
         // Set OnClickListener for btnSend
-        btnSend.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveFormData();
-            }
-        });
+        btnSend.setOnClickListener(v -> saveFormData());
     }
 
     private void saveFormData() {
