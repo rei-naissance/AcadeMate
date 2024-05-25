@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AcadeMate</string>
     <string name="part_1_borr">PART 1 - BORROWER'S INFORMATION</string>
-    <string name="device_borr">Device Borrower(s)</string>
+    <string name="device_borr">Device Borrower</string>
     <string name="name_and_ad">Name and Address of School Campus Borrowing Office</string>
     <string name="date_of_dev">Date of Device Borrowal</string>
     <string name="borrowing_n">Borrowing Number</string>
