@@ -72,13 +72,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:layout_marginTop="44dp"
+                        android:layout_marginTop="32dp"
                         android:fontFamily="@font/baloo"
                         android:text="Email"
                         android:textColor="#FFFFFF"
                         android:textSize="20sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.056"
+                        app:layout_constraintHorizontal_bias="0.06"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,14 +99,13 @@
                             android:layout_height="match_parent">
 
                             <EditText
-                                android:id="@+id/editTextTextEmailAddress"
+                                android:id="@+id/signupUser"
                                 android:layout_width="255dp"
                                 android:layout_height="58dp"
                                 android:backgroundTint="#FFFFFF"
                                 android:ems="10"
                                 android:fontFamily="@font/roboto_medium"
                                 android:inputType="textEmailAddress"
-                                android:text="Email"
                                 android:textColor="#605757"
                                 android:textSize="18sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -132,7 +131,7 @@
                             android:layout_height="match_parent">
 
                             <EditText
-                                android:id="@+id/loginPass"
+                                android:id="@+id/signupPass"
                                 android:layout_width="255dp"
                                 android:layout_height="58dp"
                                 android:backgroundTint="#FFFFFF"
