@@ -16,6 +16,9 @@
             android:name=".Forms"
             android:exported="false" />
         <activity
+            android:name=".Signup"
+            android:exported="false" />
+        <activity
             android:name=".ItemDetails"
             android:exported="false" />
         <activity
