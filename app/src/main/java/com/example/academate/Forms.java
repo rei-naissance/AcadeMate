@@ -41,11 +41,8 @@ public class Forms extends AppCompatActivity {
         btnSend = findViewById(R.id.btnSend);
 
         // Set OnClickListener for btnReturn
-        btnReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish(); // Navigate back to the previous activity
-            }
+        btnReturn.setOnClickListener(v -> {
+            finish(); // Navigate back to the previous activity
         });
 
         // Set OnClickListener for btnSend

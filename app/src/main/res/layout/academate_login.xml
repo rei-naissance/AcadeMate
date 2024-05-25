@@ -91,7 +91,6 @@
                                 android:ems="10"
                                 android:fontFamily="@font/roboto_medium"
                                 android:inputType="text"
-                                android:text="Email"
                                 android:textColor="#605757"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"

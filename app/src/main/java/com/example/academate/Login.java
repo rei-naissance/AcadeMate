@@ -4,13 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Login extends AppCompatActivity {
@@ -30,16 +28,21 @@ public class Login extends AppCompatActivity {
 
         btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(v -> {
-            String userString = this.user.getText().toString();
-            String passString = this.password.getText().toString();
-            mAuth.signInWithEmailAndPassword(userString, passString).addOnCompleteListener(task -> {
-                if (task.isSuccessful()) {
-                    Intent intent = new Intent(Login.this, MainScreen.class);
-                    startActivity(intent);
-                } else {
-                    Toast.makeText(Login.this, "Authentication failed.",Toast.LENGTH_SHORT).show();
-                }
-            });
+            String userString = user.getText().toString();
+            String passString = password.getText().toString();
+
+            if (userString.isEmpty() || passString.isEmpty()) {
+                Toast.makeText(Login.this, "Please enter both username and password.", Toast.LENGTH_SHORT).show();
+            } else {
+                mAuth.signInWithEmailAndPassword(userString, passString).addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Intent intent = new Intent(Login.this, MainScreen.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
         });
 
         signup = findViewById(R.id.textSignup);
