@@ -1,24 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AcadeMate</string>
-    <string name="part_1_borr">PART 1 - BORROWER'S INFORMATION</string>
-    <string name="device_borr">Device Borrower(s)</string>
-    <string name="name_and_ad">Name and Address of School Campus Borrowing Office</string>
-    <string name="date_of_dev">Date of Device Borrowal</string>
-    <string name="borrowing_n">Borrowing Number</string>
-    <string name="part_2_borr">PART 2 - BORROWER'S AUTHORIZATION</string>
-    <string name="i_hereby_au">I hereby authorize the School Campus Borrowing Office to
-                               verify my current enrollment status, financial need, and
-                               any other relevant information necessary to process my
-                               request for borrowing devices. I further authorize the
-                               Borrowing Office to gather information regarding my
-                               academic performance and any relevant references. It is
-                               understood that a copy of this authorization will be kept
-                               on file.\n\nThe information obtained by the Borrowing
-                               Office is solely for the purpose of assessing my
-                               eligibility for borrowing devices from the school campus.
-    </string>
-    <string name="borrower1">Borrower</string>
-    <string name="date1">Date</string>
-    <string name="borrower2">Borrower</string>
-    <string name="date2">Date</string>
 </resources>
