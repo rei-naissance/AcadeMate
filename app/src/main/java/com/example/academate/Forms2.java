@@ -45,8 +45,7 @@ public class Forms2 extends AppCompatActivity {
         btnReturn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent int1 = new Intent(Forms2.this, Profile.class);
-               startActivity(int1);
+               finish();
            }
         });
     }

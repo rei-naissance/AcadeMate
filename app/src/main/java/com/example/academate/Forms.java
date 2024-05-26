@@ -8,15 +8,19 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Forms extends AppCompatActivity {
 
     EditText eDeviceBorrower, eCampusAndAddress, eDateDeviceBorrowal, eBorrowingNumber, eBorrower, eDateBorrowed;
     ImageButton btnReturn;
     FirebaseFirestore db;
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,7 @@ public class Forms extends AppCompatActivity {
 
         // Initialize Firebase Firestore
         db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
         //Initialize UI elements
         eDeviceBorrower = findViewById(R.id.inputDeviceBorrower);
@@ -42,13 +47,19 @@ public class Forms extends AppCompatActivity {
         String borrowingNumber = eBorrowingNumber.getText().toString();
         String borrower = eBorrower.getText().toString();
         String dateBorrowed = eDateBorrowed.getText().toString();
+        String username = getIntent().getStringExtra("username");
+        String itemName = getIntent().getStringExtra("itemname");
+        String itemDescription = getIntent().getStringExtra("itemdescription");
 
-        // Save data to Firestore
         Map<String, Object> formData = new HashMap<>();
         formData.put("deviceBorrower", deviceBorrower);
         formData.put("campusAndAddress", campusAndAddress);
         formData.put("dateDeviceBorrowal", dateDeviceBorrowal);
         formData.put("borrowingNumber", borrowingNumber);
+        formData.put("username", username);
+        formData.put("itemName", itemName);
+        formData.put("itemDescription", itemDescription);
+        formData.put("email", Objects.requireNonNull(mAuth.getCurrentUser()).getEmail());
 
         db.collection("forms")
                 .add(formData)
@@ -67,13 +78,9 @@ public class Forms extends AppCompatActivity {
                     Toast.makeText(Forms.this, "Error submitting form", Toast.LENGTH_SHORT).show();
                 });
 
-        btnReturn = (ImageButton) findViewById(R.id.btnReturn);
-        btnReturn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent int1 = new Intent(Forms.this, Profile.class);
-                startActivity(int1);
-            }
+        btnReturn = findViewById(R.id.btnReturn);
+        btnReturn.setOnClickListener(view -> {
+            finish();
         });
 
 //        startActivity(intent);
