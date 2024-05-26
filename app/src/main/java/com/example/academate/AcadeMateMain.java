@@ -22,7 +22,7 @@ public class AcadeMateMain extends AppCompatActivity {
         btnSplash.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AcadeMateMain.this, Login.class);
+                Intent intent = new Intent(AcadeMateMain.this, Signup.class);
                 startActivity(intent);
             }
         });
