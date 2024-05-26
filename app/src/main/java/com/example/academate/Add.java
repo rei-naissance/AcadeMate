@@ -4,6 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -54,6 +56,15 @@ public class Add extends Fragment {
                         db.collection("items").add(itemData).addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {
                                 Toast.makeText(getActivity(), "Item added successfully.", Toast.LENGTH_SHORT).show();
+
+                                FragmentManager fragmentManager = getFragmentManager();
+                                if (fragmentManager != null) {
+                                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                                    fragmentTransaction.replace(R.id.addLayout, new Home()); //Assuming 'container' is your FrameLayout id.
+                                    fragmentTransaction.commit();
+
+                                    ((MainScreen) requireActivity()).selectHomeNavigationItem();
+                                }
                             } else {
                                 Toast.makeText(getActivity(), "Failed to add item.", Toast.LENGTH_SHORT).show();
                             }

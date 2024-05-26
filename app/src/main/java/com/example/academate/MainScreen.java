@@ -36,6 +36,10 @@ public class MainScreen extends AppCompatActivity {
         });
     }
 
+    public void selectHomeNavigationItem() {
+        binding.bottomNavigationView.setSelectedItemId(R.id.home);
+    }
+
     private void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
