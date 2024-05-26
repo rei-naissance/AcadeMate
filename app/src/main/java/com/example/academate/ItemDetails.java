@@ -16,12 +16,9 @@ public class  ItemDetails extends AppCompatActivity {
 
         borrowItem = findViewById(R.id.btnBorrowItem);
 
-        borrowItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ItemDetails.this, Forms.class);
-                startActivity(intent);
-            }
+        borrowItem.setOnClickListener(v -> {
+            Intent intent = new Intent(ItemDetails.this, Forms.class);
+            startActivity(intent);
         });
     }
 }

@@ -80,16 +80,3 @@ public class Forms extends AppCompatActivity {
                 .addOnFailureListener(e -> Toast.makeText(Forms.this, "Error submitting form: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 }
-
-//import androidx.appcompat.app.AppCompatActivity;
-//
-//import android.os.Bundle;
-//
-//public class Forms extends AppCompatActivity {
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.academate_forms);
-//    }
-//}

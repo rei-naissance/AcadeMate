@@ -28,12 +28,9 @@ public class Home extends Fragment {
         View view = inflater.inflate(R.layout.academate_home, container, false);
         btnLaptop = (ImageButton) view.findViewById(R.id.btnLaptop);
 
-        btnLaptop.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ItemDetails.class);
-                startActivity(intent);
-            }
+        btnLaptop.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), ItemDetails.class);
+            startActivity(intent);
         });
         return view;
 
