@@ -43,13 +43,13 @@ public class Forms extends AppCompatActivity {
         String borrower = eBorrower.getText().toString();
         String dateBorrowed = eDateBorrowed.getText().toString();
 
-//        Intent intent = new Intent(Forms.this, Forms2.class);
+        Intent intent = new Intent(Forms.this, Forms2.class);
 //        intent.putExtra("deviceBorrower_key", deviceBorrower);
 //        intent.putExtra("nameAndAddress_key", nameAndAddress);
 //        intent.putExtra("dateDeviceBorrowal_key", dateDeviceBorrowal);
 //        intent.putExtra("borrowingNumber_key", borrowingNumber);
-//        intent.putExtra("borrower_key", borrower);
-//        intent.putExtra("dateBorrowed_key", dateBorrowed);
+        intent.putExtra("borrower_key", borrower);
+        intent.putExtra("dateBorrowed_key", dateBorrowed);
 
         // Save data to Firestore
         Map<String, Object> formData = new HashMap<>();
@@ -64,13 +64,13 @@ public class Forms extends AppCompatActivity {
                 .add(formData)
                 .addOnSuccessListener(documentReference -> {
                     Toast.makeText(Forms.this, "Form submitted successfully", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Forms.this, Forms2.class);
+//                    Intent intent = new Intent(Forms.this, Forms2.class);
                     intent.putExtra("deviceBorrower_key", deviceBorrower);
                     intent.putExtra("nameAndAddress_key", nameAndAddress);
                     intent.putExtra("dateDeviceBorrowal_key", dateDeviceBorrowal);
                     intent.putExtra("borrowingNumber_key", borrowingNumber);
-                    intent.putExtra("borrower_key", borrower);
-                    intent.putExtra("dateBorrowed_key", dateBorrowed);
+//                    intent.putExtra("borrower_key", borrower);
+//                    intent.putExtra("dateBorrowed_key", dateBorrowed);
                     startActivity(intent);
                 })
                 .addOnFailureListener(e -> {
@@ -86,6 +86,6 @@ public class Forms extends AppCompatActivity {
             }
         });
 
-//        startActivity(intent);
+        startActivity(intent);
     }
 }
