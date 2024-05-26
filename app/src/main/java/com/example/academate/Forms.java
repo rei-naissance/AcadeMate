@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Toast;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
@@ -36,6 +38,18 @@ public class Forms extends AppCompatActivity {
     }
 
     public void onSubmitClicked(View v) {
+        if (eDeviceBorrower.getText().toString().isEmpty() ||
+                eCampusAndAddress.getText().toString().isEmpty() ||
+                eDateDeviceBorrowal.getText().toString().isEmpty() ||
+                eBorrowingNumber.getText().toString().isEmpty() ||
+                eBorrower.getText().toString().isEmpty() ||
+                eDateBorrowed.getText().toString().isEmpty()) {
+
+            // Notify the user to fill in all fields
+            Toast.makeText(Forms.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String deviceBorrower = eDeviceBorrower.getText().toString();
         String campusAndAddress = eCampusAndAddress.getText().toString();
         String dateDeviceBorrowal = eDateDeviceBorrowal.getText().toString();
@@ -73,6 +87,26 @@ public class Forms extends AppCompatActivity {
             public void onClick(View view) {
                 Intent int1 = new Intent(Forms.this, Profile.class);
                 startActivity(int1);
+            }
+        });
+
+        //For inputBorrowingNumber: limit characters to 10 only!
+        eBorrowingNumber = findViewById(R.id.inputBorrowingNumber);
+        eBorrowingNumber.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length() > 10) {
+                    // inputBorrowingNumber 10 characters only!
+                    eBorrowingNumber.setText(s.subSequence(0, 10));
+                    // Set the cursor position to the end
+                    eBorrowingNumber.setSelection(10);
+                }
             }
         });
 
