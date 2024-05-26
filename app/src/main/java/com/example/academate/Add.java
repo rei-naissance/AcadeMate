@@ -9,6 +9,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class Add extends Fragment {
 
@@ -16,6 +27,49 @@ public class Add extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.academate_add, container, false);
+        View view = inflater.inflate(R.layout.academate_add, container, false);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        Button addItemButton = view.findViewById(R.id.btnAddItem);
+
+        addItemButton.setOnClickListener(v -> {
+            if (user != null) {
+                db.collection("users").document(user.getUid()).get().addOnSuccessListener(documentSnapshot -> {
+                    if (documentSnapshot.exists()) {
+                        String username = (String) documentSnapshot.get("username");
+
+                        EditText itemName = view.findViewById(R.id.itemNameField);
+                        EditText itemDescription = view.findViewById(R.id.itemDetailsField);
+
+                        String itemNameString = itemName.getText().toString();
+                        String itemDescString = itemDescription.getText().toString();
+
+                        Map<String, Object> itemData = new HashMap<>();
+                        itemData.put("itemName", itemNameString);
+                        itemData.put("itemDescription", itemDescString);
+                        itemData.put("username", username);
+
+                        db.collection("items").add(itemData).addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getActivity(), "Item added successfully.", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getActivity(), "Failed to add item.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    } else {
+                        Toast.makeText(getActivity(), "Failed to fetch user.", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(e -> {
+                    Toast.makeText(getActivity(), "Failed to fetch user.", Toast.LENGTH_SHORT).show();
+                });
+            } else {
+                Toast.makeText(getActivity(), "No user signed in.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        return view;
     }
+
 }
