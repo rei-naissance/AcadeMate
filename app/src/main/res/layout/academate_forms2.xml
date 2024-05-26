@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Forms">
+    tools:context=".Forms2">
 
     <View
         android:id="@+id/rectangle_1"
@@ -39,18 +39,9 @@
         android:text="Borrower's Authentication Form"
         android:textColor="#FDFDFD"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/rectangle_1"
+        app:layout_constraintHorizontal_bias="0.229"
         app:layout_constraintStart_toEndOf="@+id/btnReturn"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnSend"
-        android:layout_width="29.8dp"
-        android:layout_height="29.78dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/send"
-        android:onClick="onSubmitClicked"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
@@ -250,7 +241,7 @@
         android:textColor="#7663E6"
         android:translationY="-1.03sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputBorrowerName" />
+        app:layout_constraintTop_toBottomOf="@id/outputBorrowerName" />
 
     <TextView
         android:id="@+id/date1"
@@ -266,10 +257,10 @@
         android:textSize="10sp"
         android:translationY="-1.03sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputDateBorrowerRequested" />
+        app:layout_constraintTop_toBottomOf="@+id/outputDateBorrowerRequested" />
 
     <EditText
-        android:id="@+id/inputDeviceBorrower"
+        android:id="@+id/outputDeviceBorrower"
         android:layout_width="134dp"
         android:layout_height="70dp"
         android:layout_marginStart="12dp"
@@ -283,7 +274,7 @@
         app:layout_constraintTop_toBottomOf="@+id/device_borr" />
 
     <EditText
-        android:id="@+id/inputNameAndAddress"
+        android:id="@+id/outputNameAndAddress"
         android:layout_width="226dp"
         android:layout_height="51dp"
         android:layout_marginTop="8dp"
@@ -297,7 +288,7 @@
         app:layout_constraintTop_toBottomOf="@+id/name_and_ad" />
 
     <EditText
-        android:id="@+id/inputDateOfDeviceBorrowal"
+        android:id="@+id/outputDateOfDeviceBorrowal"
         android:layout_width="203dp"
         android:layout_height="43dp"
         android:layout_marginStart="12dp"
@@ -311,7 +302,7 @@
         app:layout_constraintTop_toBottomOf="@+id/date_of_dev" />
 
     <EditText
-        android:id="@+id/inputBorrowingNumber"
+        android:id="@+id/outputBorrowingNumber"
         android:layout_width="162dp"
         android:layout_height="43dp"
         android:layout_marginTop="12dp"
@@ -327,7 +318,7 @@
         app:layout_constraintTop_toBottomOf="@+id/borrowing_n" />
 
     <EditText
-        android:id="@+id/inputBorrowerName"
+        android:id="@+id/outputBorrowerName"
         android:layout_width="120dp"
         android:layout_height="43dp"
         android:layout_marginStart="40dp"
@@ -341,7 +332,7 @@
         app:layout_constraintTop_toBottomOf="@+id/i_hereby_au" />
 
     <EditText
-        android:id="@+id/inputDateBorrowerRequested"
+        android:id="@+id/outputDateBorrowerRequested"
         android:layout_width="120dp"
         android:layout_height="43dp"
         android:layout_marginTop="56dp"
