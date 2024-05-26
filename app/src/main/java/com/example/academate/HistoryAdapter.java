@@ -11,8 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-
-public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
+public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.ItemViewHolder> {
     private ArrayList<Item> itemList;
     private Context context;
     private OnItemClickListener listener;
@@ -21,7 +20,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
         this.listener = listener;
     }
 
-    public ItemsAdapter(Context context, ArrayList<Item> itemList){
+    public HistoryAdapter(Context context, ArrayList<Item> itemList){
         this.context = context;
         this.itemList = itemList;
     }

@@ -29,12 +29,12 @@ public class ItemDetails extends AppCompatActivity {
         itemNameTextView.setText(itemName);
         itemDescriptionTextView.setText(itemDescription);
 
-        borrowItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ItemDetails.this, Forms.class);
-                startActivity(intent);
-            }
+        borrowItem.setOnClickListener(v -> {
+            Intent intent = new Intent(ItemDetails.this, Forms.class);
+            intent.putExtra("username", username);
+            intent.putExtra("itemname", itemName);
+            intent.putExtra("itemdescription", itemDescription);
+            startActivity(intent);
         });
     }
 }
