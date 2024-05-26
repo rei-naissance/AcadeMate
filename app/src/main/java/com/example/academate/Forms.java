@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class Forms extends AppCompatActivity {
 
-    EditText eDeviceBorrower, eNameAndAddress, eDateDeviceBorrowal, eBorrowingNumber, eBorrower, eDateBorrowed;
+    EditText eDeviceBorrower, eCampusAndAddress, eDateDeviceBorrowal, eBorrowingNumber, eBorrower, eDateBorrowed;
     ImageButton btnReturn;
     FirebaseFirestore db;
 
@@ -28,7 +28,7 @@ public class Forms extends AppCompatActivity {
 
         //Initialize UI elements
         eDeviceBorrower = findViewById(R.id.inputDeviceBorrower);
-        eNameAndAddress = findViewById(R.id.inputNameAndAddress);
+        eCampusAndAddress = findViewById(R.id.inputCampusAndAddress);
         eDateDeviceBorrowal = findViewById(R.id.inputDateOfDeviceBorrowal);
         eBorrowingNumber = findViewById(R.id.inputBorrowingNumber);
         eBorrower = findViewById(R.id.inputBorrowerName);
@@ -37,7 +37,7 @@ public class Forms extends AppCompatActivity {
 
     public void onSubmitClicked(View v) {
         String deviceBorrower = eDeviceBorrower.getText().toString();
-        String nameAndAddress = eNameAndAddress.getText().toString();
+        String campusAndAddress = eCampusAndAddress.getText().toString();
         String dateDeviceBorrowal = eDateDeviceBorrowal.getText().toString();
         String borrowingNumber = eBorrowingNumber.getText().toString();
         String borrower = eBorrower.getText().toString();
@@ -46,7 +46,7 @@ public class Forms extends AppCompatActivity {
         // Save data to Firestore
         Map<String, Object> formData = new HashMap<>();
         formData.put("deviceBorrower", deviceBorrower);
-        formData.put("nameAndAddress", nameAndAddress);
+        formData.put("campusAndAddress", campusAndAddress);
         formData.put("dateDeviceBorrowal", dateDeviceBorrowal);
         formData.put("borrowingNumber", borrowingNumber);
 
@@ -56,7 +56,7 @@ public class Forms extends AppCompatActivity {
                     Toast.makeText(Forms.this, "Form submitted successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Forms.this, Forms2.class);
                     intent.putExtra("deviceBorrower_key", deviceBorrower);
-                    intent.putExtra("nameAndAddress_key", nameAndAddress);
+                    intent.putExtra("campusAndAddress_key", campusAndAddress);
                     intent.putExtra("dateDeviceBorrowal_key", dateDeviceBorrowal);
                     intent.putExtra("borrowingNumber_key", borrowingNumber);
                     intent.putExtra("borrower_key", borrower);
@@ -71,7 +71,7 @@ public class Forms extends AppCompatActivity {
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent int1 = new Intent(Forms.this, Home.class);
+                Intent int1 = new Intent(Forms.this, Profile.class);
                 startActivity(int1);
             }
         });

@@ -7,14 +7,8 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import android.widget.EditText;
-import android.widget.Toast;
-import com.google.firebase.firestore.FirebaseFirestore;
-import java.util.HashMap;
-import java.util.Map;
-
 public class Forms2 extends AppCompatActivity {
-    TextView iDeviceBorrower, iNameAndAddress, iDateDeviceBorrowal, iBorrowingNumber, iBorrower, iDateBorrowed;
+    TextView iDeviceBorrower, iCampusAndAddress, iDateDeviceBorrowal, iBorrowingNumber, iBorrower, iDateBorrowed;
     ImageButton btnReturn;
 
     @Override
@@ -24,7 +18,7 @@ public class Forms2 extends AppCompatActivity {
 
         //Initialize TextViews
         iDeviceBorrower = findViewById(R.id.outputDeviceBorrower);
-        iNameAndAddress = findViewById(R.id.outputNameAndAddress);
+        iCampusAndAddress = findViewById(R.id.outputCampusAndAddress);
         iDateDeviceBorrowal = findViewById(R.id.outputDateOfDeviceBorrowal);
         iBorrowingNumber = findViewById(R.id.outputBorrowingNumber);
         iBorrower = findViewById(R.id.outputBorrowerName);
@@ -33,7 +27,7 @@ public class Forms2 extends AppCompatActivity {
         //Get data from intent
         Intent intent = getIntent();
         String deviceBorrower = intent.getStringExtra("deviceBorrower_key");
-        String nameAndAddress = intent.getStringExtra("nameAndAddress_key");
+        String campusAndAddress = intent.getStringExtra("campusAndAddress_key");
         String dateDeviceBorrowal = intent.getStringExtra("dateDeviceBorrowal_key");
         String borrowingNumber = intent.getStringExtra("borrowingNumber_key");
         String borrower = intent.getStringExtra("borrower_key");
@@ -41,7 +35,7 @@ public class Forms2 extends AppCompatActivity {
 
         // Set text to TextViews
         iDeviceBorrower.setText(deviceBorrower);
-        iNameAndAddress.setText(nameAndAddress);
+        iCampusAndAddress.setText(campusAndAddress);
         iDateDeviceBorrowal.setText(dateDeviceBorrowal);
         iBorrowingNumber.setText(borrowingNumber);
         iBorrower.setText(borrower);
@@ -51,7 +45,7 @@ public class Forms2 extends AppCompatActivity {
         btnReturn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent int1 = new Intent(Forms2.this, Home.class);
+               Intent int1 = new Intent(Forms2.this, Profile.class);
                startActivity(int1);
            }
         });
