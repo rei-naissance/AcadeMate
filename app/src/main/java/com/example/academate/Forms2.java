@@ -47,7 +47,7 @@ public class Forms2 extends AppCompatActivity {
         iBorrower.setText(borrower);
         iDateBorrowed.setText(dateBorrowed);
 
-        btnReturn = (ImageButton) findViewById(R.id.btnReturn);
+        btnReturn = (ImageButton) findViewById(R.id.btnReturn2);
         btnReturn.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {

@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/btnReturn"
+        android:id="@+id/btnReturn2"
         android:layout_width="20.8dp"
         android:layout_height="20.78dp"
         android:layout_marginStart="16dp"
@@ -41,7 +41,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@id/rectangle_1"
         app:layout_constraintHorizontal_bias="0.229"
-        app:layout_constraintStart_toEndOf="@+id/btnReturn"
+        app:layout_constraintStart_toEndOf="@+id/btnReturn2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
