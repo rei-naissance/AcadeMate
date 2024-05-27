@@ -20,7 +20,14 @@ public class MainScreen extends AppCompatActivity {
         binding = AcademateMainScreenBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        replaceFragment(new Home());
+//        replaceFragment(new Home());
+
+        if (getIntent().getBooleanExtra("GotoHomeFragment", false)) {
+            replaceFragment(new Home());
+            selectHomeNavigationItem();
+        } else {
+            replaceFragment(new Home());
+        }
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 

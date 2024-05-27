@@ -62,7 +62,7 @@ public class Add extends Fragment {
                                 FragmentManager fragmentManager = getFragmentManager();
                                 if (fragmentManager != null) {
                                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                                    fragmentTransaction.replace(R.id.addLayout, new Home()); //Assuming 'container' is your FrameLayout id.
+                                    fragmentTransaction.replace(R.id.addLayout, new Home());
                                     fragmentTransaction.commit();
 
                                     ((MainScreen) requireActivity()).selectHomeNavigationItem();

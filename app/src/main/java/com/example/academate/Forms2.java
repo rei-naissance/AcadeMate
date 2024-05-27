@@ -42,11 +42,11 @@ public class Forms2 extends AppCompatActivity {
         iDateBorrowed.setText(dateBorrowed);
 
         btnReturn = (ImageButton) findViewById(R.id.btnReturn2);
-        btnReturn.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               finish();
-           }
+        btnReturn.setOnClickListener(view -> {
+            Intent ret = new Intent(getApplicationContext(), MainScreen.class);
+            ret.putExtra("GotoHomeFragment", true);
+            ret.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);  // This line is to ensure the MainScreen Activity is not recreated
+            startActivity(ret);
         });
     }
 }
