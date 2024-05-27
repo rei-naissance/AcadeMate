@@ -33,6 +33,7 @@ public class Add extends Fragment {
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
         Button addItemButton = view.findViewById(R.id.btnAddItem);
 
@@ -52,6 +53,7 @@ public class Add extends Fragment {
                         itemData.put("itemName", itemNameString);
                         itemData.put("itemDescription", itemDescString);
                         itemData.put("username", username);
+                        itemData.put("email", Objects.requireNonNull(mAuth.getCurrentUser()).getEmail());
 
                         db.collection("items").add(itemData).addOnCompleteListener(task -> {
                             if (task.isSuccessful()) {

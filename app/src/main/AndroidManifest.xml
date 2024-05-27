@@ -16,6 +16,9 @@
             android:name=".BorrowHistory"
             android:exported="false" />
         <activity
+            android:name=".UserItems"
+            android:exported="false" />
+        <activity
             android:name=".Forms2"
             android:exported="false" />
         <activity

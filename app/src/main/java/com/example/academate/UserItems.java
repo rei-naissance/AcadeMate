@@ -2,13 +2,13 @@ package com.example.academate;
 
 import static android.content.ContentValues.TAG;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -17,28 +17,26 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class BorrowHistory extends AppCompatActivity {
+public class UserItems extends AppCompatActivity {
     Button btnBack;
     RecyclerView recyclerView;
-    HistoryAdapter adapter;
+    OwnedAdapter adapter;
     ArrayList<Item> itemList = new ArrayList<>();
-
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.academate_borrow_history);
+        setContentView(R.layout.academate_user_items);
 
-        recyclerView = findViewById(R.id.borrowRecyclerView);
+        btnBack = findViewById(R.id.btnBack);
+        recyclerView = findViewById(R.id.ownedRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new HistoryAdapter(this, itemList);
-        recyclerView.setAdapter(adapter);
 
         String currentUserEmail = Objects.requireNonNull(mAuth.getCurrentUser()).getEmail();
 
-        db.collection("forms")
+        db.collection("items")
                 .whereEqualTo("email", currentUserEmail)
                 .get()
                 .addOnCompleteListener(task -> {
@@ -47,13 +45,13 @@ public class BorrowHistory extends AppCompatActivity {
                             Item item = document.toObject(Item.class);
                             itemList.add(item);
                         }
-                        adapter.notifyDataSetChanged();
+                        adapter = new OwnedAdapter(UserItems.this, itemList);
+                        recyclerView.setAdapter(adapter);
                     } else {
                         Log.d(TAG, "Error getting documents: ", task.getException());
                     }
                 });
 
-        btnBack = findViewById(R.id.btnBackProfile);
-        btnBack.setOnClickListener(v -> finish());
+       btnBack.setOnClickListener(v -> finish());
     }
 }

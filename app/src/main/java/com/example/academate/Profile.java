@@ -19,7 +19,7 @@ import java.util.Objects;
 
 public class Profile extends Fragment {
 
-    TextView borrowhistory;
+    TextView borrowhistory, owned;
     Button logout;
 
     @Nullable
@@ -30,9 +30,15 @@ public class Profile extends Fragment {
         View view = inflater.inflate(R.layout.academate_profile, container, false);
         borrowhistory = view.findViewById(R.id.borrowHistoryText);
         logout = view.findViewById(R.id.btnLogout);
+        owned = view.findViewById(R.id.textOwnedItems);
 
         borrowhistory.setOnClickListener(v -> {
             Intent intent = new Intent(getContext(), BorrowHistory.class);
+            startActivity(intent);
+        });
+
+        owned.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), UserItems.class);
             startActivity(intent);
         });
 
