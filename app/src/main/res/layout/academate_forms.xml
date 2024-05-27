@@ -1,357 +1,361 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Forms">
 
-    <View
-        android:id="@+id/rectangle_1"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="#211951"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/btnReturn"
-        android:layout_width="20.8dp"
-        android:layout_height="20.78dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/goback"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_1"
-        app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/rectangle_1"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="#211951"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/borrower_s_"
-        android:layout_width="224dp"
-        android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
-        android:gravity="top"
-        android:text="Borrower's Authentication Form"
-        android:textColor="#FDFDFD"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/btnReturn"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/btnReturn"
+            android:layout_width="20.8dp"
+            android:layout_height="20.78dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/goback"
+            app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/btnSend"
-        android:layout_width="29.8dp"
-        android:layout_height="29.78dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/send"
-        android:onClick="onSubmitClicked"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/borrower_s_"
+            android:layout_width="224dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:gravity="top"
+            android:text="Borrower's Authentication Form"
+            android:textColor="#FDFDFD"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/btnReturn"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <View
-        android:id="@+id/rectangle_2"
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="#D9D9D9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_1" />
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="29.8dp"
+            android:layout_height="29.78dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/send"
+            android:onClick="onSubmitClicked"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/part_1_borr"
-        android:layout_width="237dp"
-        android:layout_height="17dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="top"
-        android:textColor="#7663E6"
-        android:textSize="14sp"
-        android:text="BORROWER'S INFORMATION"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_2"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_2" />
+        <View
+            android:id="@+id/rectangle_2"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="#D9D9D9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_1" />
 
-    <View
-        android:id="@+id/rectangle_3"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="#7663E6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_2" />
+        <TextView
+            android:id="@+id/part_1_borr"
+            android:layout_width="237dp"
+            android:layout_height="17dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:gravity="top"
+            android:text="BORROWER'S INFORMATION"
+            android:textColor="#7663E6"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/rectangle_2"
+            app:layout_constraintTop_toTopOf="@+id/rectangle_2" />
 
-    <TextView
-        android:id="@+id/device_borr"
-        android:layout_width="94dp"
-        android:layout_height="13dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="8dp"
-        android:gravity="top"
-        android:text="Device Borrower"
-        android:textColor="#211951"
-        android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/rectangle_3" />
+        <View
+            android:id="@+id/rectangle_3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="#7663E6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_2" />
 
-    <View
-        android:id="@+id/rectangle_4"
-        android:layout_width="1dp"
-        android:layout_height="120dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="160dp"
-        android:background="#7663E6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_2" />
+        <TextView
+            android:id="@+id/device_borr"
+            android:layout_width="120dp"
+            android:layout_height="13dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:gravity="top"
+            android:text="Item or Device Borrower"
+            android:textColor="#211951"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rectangle_3" />
 
-    <TextView
-        android:id="@+id/name_and_ad"
-        android:layout_width="227dp"
-        android:layout_height="35dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="top"
-        android:text="Name and Address of School Campus Borrowing Office"
-        android:textColor="#211951"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rectangle_3" />
+        <View
+            android:id="@+id/rectangle_4"
+            android:layout_width="1dp"
+            android:layout_height="120dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="160dp"
+            android:background="#7663E6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_2" />
 
-    <View
-        android:id="@+id/rectangle_5"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="#7663E6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_4" />
+        <TextView
+            android:id="@+id/name_and_ad"
+            android:layout_width="227dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="top"
+            android:text="Name and Address of School Campus Borrowing Office"
+            android:textColor="#211951"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rectangle_3" />
 
-    <TextView
-        android:id="@+id/date_of_dev"
-        android:layout_width="118dp"
-        android:layout_height="13dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"
-        android:gravity="top"
-        android:text="Date of Device Borrowal"
-        android:textColor="#211951"
-        android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_5" />
+        <View
+            android:id="@+id/rectangle_5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="#7663E6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_4" />
 
-    <View
-        android:id="@+id/rectangle_6"
-        android:layout_width="1dp"
-        android:layout_height="79dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="184dp"
-        android:background="#7663E6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_5" />
+        <TextView
+            android:id="@+id/date_of_dev"
+            android:layout_width="118dp"
+            android:layout_height="13dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:gravity="top"
+            android:text="Date of Device Borrowal"
+            android:textColor="#211951"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_5" />
 
-    <TextView
-        android:id="@+id/borrowing_n"
-        android:layout_width="93dp"
-        android:layout_height="13dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="80dp"
-        android:gravity="top"
-        android:text="Borrowing Number"
-        android:textColor="#211951"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_5" />
+        <View
+            android:id="@+id/rectangle_6"
+            android:layout_width="1dp"
+            android:layout_height="79dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="184dp"
+            android:background="#7663E6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_5" />
 
-    <View
-        android:id="@+id/rectangle_7"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="#7663E6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_6" />
+        <TextView
+            android:id="@+id/borrowing_n"
+            android:layout_width="93dp"
+            android:layout_height="13dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="80dp"
+            android:gravity="top"
+            android:text="Borrowing Number"
+            android:textColor="#211951"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_5" />
 
-    <View
-        android:id="@+id/rectangle_8"
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="#D9D9D9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rectangle_7" />
+        <View
+            android:id="@+id/rectangle_7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="#7663E6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_6" />
 
-    <TextView
-        android:id="@+id/part_2_borr"
-        android:layout_width="252dp"
-        android:layout_height="17dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:gravity="top"
-        android:text="PART 2 - BORROWER'S AUTHORIZATION"
-        android:textSize="14sp"
-        android:textColor="#7663E6"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_8"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_8" />
+        <View
+            android:id="@+id/rectangle_8"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="#D9D9D9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rectangle_7" />
 
-    <TextView
-        android:id="@+id/i_hereby_au"
-        android:layout_width="325dp"
-        android:layout_height="217dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="28dp"
-        android:gravity="top"
-        android:lineSpacingExtra="3sp"
-        android:text="I hereby authorize the School Campus Borrowing Office to verify my current enrollment status, financial need, and any other relevant information necessary to process my request for borrowing devices. I further authorize the Borrowing Office to gather information regarding my academic performance and any relevant references. It is understood that a copy of this authorization will be kept on file.\n\nThe information obtained by the Borrowing Office is solely for the purpose of assessing my eligibility for borrowing devices from the school campus."
-        android:textSize="13sp"
-        android:textColor="#211951"
-        android:translationY="-1.35sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_8" />
+        <TextView
+            android:id="@+id/part_2_borr"
+            android:layout_width="252dp"
+            android:layout_height="17dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:gravity="top"
+            android:text="PART 2 - BORROWER'S AUTHORIZATION"
+            android:textColor="#7663E6"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/rectangle_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/rectangle_8"
+            app:layout_constraintTop_toTopOf="@+id/rectangle_8" />
 
-    <TextView
-        android:id="@+id/borrower1"
-        android:layout_width="59dp"
-        android:layout_height="14dp"
-        android:layout_marginStart="43dp"
-        android:gravity="top"
-        android:lineSpacingExtra="2sp"
-        android:text="Borrower"
-        android:textSize="10sp"
-        android:textColor="#7663E6"
-        android:translationY="-1.03sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputBorrowerName" />
+        <TextView
+            android:id="@+id/i_hereby_au"
+            android:layout_width="325dp"
+            android:layout_height="217dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="28dp"
+            android:gravity="top"
+            android:lineSpacingExtra="3sp"
+            android:text="I hereby authorize the School Campus Borrowing Office to verify my current enrollment status, financial need, and any other relevant information necessary to process my request for borrowing items or devices. I further authorize the Borrowing Office to gather information regarding my academic performance and any relevant references. It is understood that a copy of this authorization will be kept on file.\n\nThe information obtained by the Borrowing Office is solely for the purpose of assessing my eligibility for borrowing items or devices from the school campus."
+            android:textColor="#211951"
+            android:textSize="13sp"
+            android:translationY="-1.35sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rectangle_8" />
 
-    <TextView
-        android:id="@+id/date1"
-        android:layout_width="59dp"
-        android:layout_height="14dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="98dp"
-        android:gravity="top"
-        android:lineSpacingExtra="2sp"
-        android:text="Date"
-        android:textColor="#7663E6"
-        android:textSize="10sp"
-        android:translationY="-1.03sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputDateBorrowerRequested" />
+        <TextView
+            android:id="@+id/borrower1"
+            android:layout_width="59dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="43dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text="Borrower"
+            android:textColor="#7663E6"
+            android:textSize="10sp"
+            android:translationY="-1.03sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/inputBorrowerName" />
 
-    <EditText
-        android:id="@+id/inputDeviceBorrower"
-        android:layout_width="134dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="#7663E6"
-        android:ems="10"
-        android:inputType="text"
-        android:textColor="#7663E6"
-        android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/device_borr" />
+        <TextView
+            android:id="@+id/date1"
+            android:layout_width="59dp"
+            android:layout_height="14dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="98dp"
+            android:gravity="top"
+            android:lineSpacingExtra="2sp"
+            android:text="Date"
+            android:textColor="#7663E6"
+            android:textSize="10sp"
+            android:translationY="-1.03sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputDateBorrowerRequested" />
 
-    <EditText
-        android:id="@+id/inputCampusAndAddress"
-        android:layout_width="226dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#7663E6"
-        android:ems="10"
-        android:inputType="text"
-        android:shadowColor="#7663E6"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_and_ad" />
+        <EditText
+            android:id="@+id/inputDeviceBorrower"
+            android:layout_width="134dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#7663E6"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="#7663E6"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/device_borr" />
 
-    <EditText
-        android:id="@+id/inputDateOfDeviceBorrowal"
-        android:layout_width="203dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="#7663E6"
-        android:ems="10"
-        android:inputType="text"
-        android:textColor="#7663E6"
-        android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date_of_dev" />
+        <EditText
+            android:id="@+id/inputCampusAndAddress"
+            android:layout_width="226dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#7663E6"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="#7663E6"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name_and_ad" />
 
-    <EditText
-        android:id="@+id/inputBorrowingNumber"
-        android:layout_width="162dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="#7663E6"
-        android:ems="10"
-        android:inputType="text"
-        android:text="+63 "
-        android:textColor="#7663E6"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/borrowing_n" />
+        <EditText
+            android:id="@+id/inputDateOfDeviceBorrowal"
+            android:layout_width="203dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#7663E6"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="#7663E6"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_of_dev" />
 
-    <EditText
-        android:id="@+id/inputBorrowerName"
-        android:layout_width="120dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="56dp"
-        android:backgroundTint="#7663E6"
-        android:ems="10"
-        android:inputType="text"
-        android:textColor="#7663E6"
-        android:textSize="11sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/i_hereby_au" />
+        <EditText
+            android:id="@+id/inputBorrowingNumber"
+            android:layout_width="162dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#7663E6"
+            android:ems="10"
+            android:inputType="text"
+            android:text="+63 "
+            android:textColor="#7663E6"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.955"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/borrowing_n" />
 
-    <EditText
-        android:id="@+id/inputDateBorrowerRequested"
-        android:layout_width="120dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="#7663E6"
-        android:ems="10"
-        android:inputType="date"
-        android:textColor="#7663E6"
-        android:textSize="11sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/i_hereby_au" />
+        <EditText
+            android:id="@+id/inputBorrowerName"
+            android:layout_width="120dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="56dp"
+            android:backgroundTint="#7663E6"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="#7663E6"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_hereby_au" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+            android:id="@+id/inputDateBorrowerRequested"
+            android:layout_width="120dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginEnd="40dp"
+            android:backgroundTint="#7663E6"
+            android:ems="10"
+            android:inputType="date"
+            android:textColor="#7663E6"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/i_hereby_au" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

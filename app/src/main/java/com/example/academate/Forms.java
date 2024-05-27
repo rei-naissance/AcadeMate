@@ -1,12 +1,16 @@
 package com.example.academate;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,9 +42,33 @@ public class Forms extends AppCompatActivity {
         eBorrowingNumber = findViewById(R.id.inputBorrowingNumber);
         eBorrower = findViewById(R.id.inputBorrowerName);
         eDateBorrowed = findViewById(R.id.inputDateBorrowerRequested);
+
+        btnReturn = findViewById(R.id.btnReturn);
+        btnReturn.setOnClickListener(view -> finish());
     }
 
     public void onSubmitClicked(View v) {
+        new AlertDialog.Builder(this)
+                .setTitle("Submit Form")
+                .setMessage("Are you sure you want to submit the form?")
+                .setPositiveButton("Yes", (dialog, which) -> submitForm())
+                .setNegativeButton("No", null)
+                .show();
+    }
+
+    private void submitForm() {
+        if (eDeviceBorrower.getText().toString().isEmpty() ||
+                eCampusAndAddress.getText().toString().isEmpty() ||
+                eDateDeviceBorrowal.getText().toString().isEmpty() ||
+                eBorrowingNumber.getText().toString().isEmpty() ||
+                eBorrower.getText().toString().isEmpty() ||
+                eDateBorrowed.getText().toString().isEmpty()) {
+
+            // Notify the user to fill in all fields
+            Toast.makeText(Forms.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         String deviceBorrower = eDeviceBorrower.getText().toString();
         String campusAndAddress = eCampusAndAddress.getText().toString();
         String dateDeviceBorrowal = eDateDeviceBorrowal.getText().toString();
@@ -77,12 +105,9 @@ public class Forms extends AppCompatActivity {
                 .addOnFailureListener(e -> {
                     Toast.makeText(Forms.this, "Error submitting form", Toast.LENGTH_SHORT).show();
                 });
-
-        btnReturn = findViewById(R.id.btnReturn);
-        btnReturn.setOnClickListener(view -> {
-            finish();
-        });
+    }
 
 //        startActivity(intent);
-    }
 }
+
+
