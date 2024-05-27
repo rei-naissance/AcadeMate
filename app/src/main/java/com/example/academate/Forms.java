@@ -21,7 +21,7 @@ import java.util.Objects;
 
 public class Forms extends AppCompatActivity {
 
-    EditText eDeviceBorrower, eCampusAndAddress, eDateDeviceBorrowal, eBorrowingNumber, eBorrower, eDateBorrowed;
+    EditText eItemBorrower, eCampusAndAddress, eDateDeviceBorrowal, eBorrowingNumber, eBorrower, eDateBorrowed;
     ImageButton btnReturn;
     FirebaseFirestore db;
     FirebaseAuth mAuth;
@@ -36,9 +36,9 @@ public class Forms extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Initialize UI elements
-        eDeviceBorrower = findViewById(R.id.inputDeviceBorrower);
+        eItemBorrower = findViewById(R.id.inputItemBorrower);
         eCampusAndAddress = findViewById(R.id.inputCampusAndAddress);
-        eDateDeviceBorrowal = findViewById(R.id.inputDateOfDeviceBorrowal);
+        eDateDeviceBorrowal = findViewById(R.id.inputDateOfItemBorrowal);
         eBorrowingNumber = findViewById(R.id.inputBorrowingNumber);
         eBorrower = findViewById(R.id.inputBorrowerName);
         eDateBorrowed = findViewById(R.id.inputDateBorrowerRequested);
@@ -57,7 +57,7 @@ public class Forms extends AppCompatActivity {
     }
 
     private void submitForm() {
-        if (eDeviceBorrower.getText().toString().isEmpty() ||
+        if (eItemBorrower.getText().toString().isEmpty() ||
                 eCampusAndAddress.getText().toString().isEmpty() ||
                 eDateDeviceBorrowal.getText().toString().isEmpty() ||
                 eBorrowingNumber.getText().toString().isEmpty() ||
@@ -69,7 +69,7 @@ public class Forms extends AppCompatActivity {
             return;
         }
 
-        String deviceBorrower = eDeviceBorrower.getText().toString();
+        String itemBorrower = eItemBorrower.getText().toString();
         String campusAndAddress = eCampusAndAddress.getText().toString();
         String dateDeviceBorrowal = eDateDeviceBorrowal.getText().toString();
         String borrowingNumber = eBorrowingNumber.getText().toString();
@@ -80,9 +80,9 @@ public class Forms extends AppCompatActivity {
         String itemDescription = getIntent().getStringExtra("itemdescription");
 
         Map<String, Object> formData = new HashMap<>();
-        formData.put("deviceBorrower", deviceBorrower);
+        formData.put("itemBorrower", itemBorrower);
         formData.put("campusAndAddress", campusAndAddress);
-        formData.put("dateDeviceBorrowal", dateDeviceBorrowal);
+        formData.put("dateItemBorrowal", dateDeviceBorrowal);
         formData.put("borrowingNumber", borrowingNumber);
         formData.put("username", username);
         formData.put("itemName", itemName);
@@ -94,7 +94,7 @@ public class Forms extends AppCompatActivity {
                 .addOnSuccessListener(documentReference -> {
                     Toast.makeText(Forms.this, "Form submitted successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(Forms.this, Forms2.class);
-                    intent.putExtra("deviceBorrower_key", deviceBorrower);
+                    intent.putExtra("itemBorrower_key", itemBorrower);
                     intent.putExtra("campusAndAddress_key", campusAndAddress);
                     intent.putExtra("dateDeviceBorrowal_key", dateDeviceBorrowal);
                     intent.putExtra("borrowingNumber_key", borrowingNumber);

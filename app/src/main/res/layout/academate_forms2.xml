@@ -85,7 +85,7 @@
             app:layout_constraintTop_toBottomOf="@+id/rectangle_2" />
 
         <TextView
-            android:id="@+id/device_borr"
+            android:id="@+id/item_borr"
             android:layout_width="120dp"
             android:layout_height="13dp"
             android:layout_alignParentLeft="true"
@@ -146,7 +146,7 @@
             android:layout_marginStart="12dp"
             android:layout_marginTop="4dp"
             android:gravity="top"
-            android:text="Date of Device Borrowal"
+            android:text="Date of Item Borrowal"
             android:textColor="#211951"
             android:textSize="11sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -263,7 +263,7 @@
             app:layout_constraintTop_toBottomOf="@+id/outputDateBorrowerRequested" />
 
         <EditText
-            android:id="@+id/outputDeviceBorrower"
+            android:id="@+id/outputItemBorrower"
             android:layout_width="134dp"
             android:layout_height="70dp"
             android:layout_marginStart="12dp"
@@ -274,7 +274,7 @@
             android:textColor="#7663E6"
             android:textSize="11sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/device_borr" />
+            app:layout_constraintTop_toBottomOf="@+id/item_borr" />
 
         <EditText
             android:id="@+id/outputCampusAndAddress"
@@ -291,7 +291,7 @@
             app:layout_constraintTop_toBottomOf="@+id/name_and_ad" />
 
         <EditText
-            android:id="@+id/outputDateOfDeviceBorrowal"
+            android:id="@+id/outputDateOfItemBorrowal"
             android:layout_width="203dp"
             android:layout_height="43dp"
             android:layout_marginStart="12dp"
