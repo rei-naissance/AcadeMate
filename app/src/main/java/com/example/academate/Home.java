@@ -17,11 +17,13 @@ import android.view.ViewGroup;
 import android.widget.SearchView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Home extends Fragment {
     private RecyclerView recyclerView;
@@ -30,6 +32,7 @@ public class Home extends Fragment {
     private ArrayList<Item> filteredList = new ArrayList<>();
     private FirebaseFirestore db;
     private ItemsAdapter itemsAdapter;
+    private FirebaseAuth mAuth;
 
     @Nullable
     @Override
@@ -40,6 +43,7 @@ public class Home extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
+        mAuth = FirebaseAuth.getInstance();
         search = view.findViewById(R.id.itemSearch);
         recyclerView = view.findViewById(R.id.itemsRecycleView);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
@@ -49,10 +53,13 @@ public class Home extends Fragment {
 
         db = FirebaseFirestore.getInstance();
 
+        String email = Objects.requireNonNull(mAuth.getCurrentUser()).getEmail();
+
         db.collection("items").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for(QueryDocumentSnapshot document : task.getResult()) {
                     Item item = document.toObject(Item.class);
+                    if (item.getEmail().equals(email)) continue;
                     itemList.add(item);
                     filteredList.add(item);
                 }
