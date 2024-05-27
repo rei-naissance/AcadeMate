@@ -1,6 +1,8 @@
 package com.example.academate;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
@@ -40,9 +42,21 @@ public class Forms extends AppCompatActivity {
         eBorrowingNumber = findViewById(R.id.inputBorrowingNumber);
         eBorrower = findViewById(R.id.inputBorrowerName);
         eDateBorrowed = findViewById(R.id.inputDateBorrowerRequested);
+
+        btnReturn = findViewById(R.id.btnReturn);
+        btnReturn.setOnClickListener(view -> finish());
     }
 
     public void onSubmitClicked(View v) {
+        new AlertDialog.Builder(this)
+                .setTitle("Submit Form")
+                .setMessage("Are you sure you want to submit the form?")
+                .setPositiveButton("Yes", (dialog, which) -> submitForm())
+                .setNegativeButton("No", null)
+                .show();
+    }
+
+    private void submitForm() {
         if (eDeviceBorrower.getText().toString().isEmpty() ||
                 eCampusAndAddress.getText().toString().isEmpty() ||
                 eDateDeviceBorrowal.getText().toString().isEmpty() ||
@@ -91,32 +105,9 @@ public class Forms extends AppCompatActivity {
                 .addOnFailureListener(e -> {
                     Toast.makeText(Forms.this, "Error submitting form", Toast.LENGTH_SHORT).show();
                 });
-
-        btnReturn = findViewById(R.id.btnReturn);
-        btnReturn.setOnClickListener(view -> {
-            finish();
-        });
-
-        //For inputBorrowingNumber: limit characters to 10 only!
-        eBorrowingNumber = findViewById(R.id.inputBorrowingNumber);
-        eBorrowingNumber.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {}
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (s.length() > 10) {
-                    // inputBorrowingNumber 10 characters only!
-                    eBorrowingNumber.setText(s.subSequence(0, 10));
-                    // Set the cursor position to the end
-                    eBorrowingNumber.setSelection(10);
-                }
-            }
-        });
+    }
 
 //        startActivity(intent);
-    }
 }
+
+
